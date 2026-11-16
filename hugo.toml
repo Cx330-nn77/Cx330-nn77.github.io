@@ -1,0 +1,77 @@
+baseURL = 'https://cx330-nn77.github.io/'
+defaultContentLanguage = 'zh'
+locale = 'zh-cn'
+title = 'Nan 的博客'
+theme = 'PaperMod'
+
+enableRobotsTXT = true
+hasCJKLanguage = true          # 中文字数统计和阅读时间更准确
+enableEmoji = true
+
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']   # JSON 用于站内搜索
+
+[markup.goldmark.renderer]
+  unsafe = true                    # 允许在 Markdown 里写 HTML
+
+[markup.highlight]
+  noClasses = false
+  lineNos = false
+
+[params]
+  env = 'production'
+  description = '论文笔记、实验记录与工具配置'
+  author = 'Nan'
+  defaultTheme = 'auto'            # 跟随系统深色/浅色，右上角可手动切换
+  ShowReadingTime = true
+  ShowWordCount = true
+  ShowToc = true
+  TocOpen = false
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  ShowCodeCopyButtons = true
+  ShowShareButtons = false
+  DateFormat = '2006-01-02'
+
+  [params.homeInfoParams]
+    Title = '你好，欢迎来到这里 👋'
+    Content = '计算机专业硕士，关注人工智能技术方向。这里记录论文笔记、实验过程和工具配置经验。'
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/Cx330-nn77'
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    threshold = 0.4
+    keys = ['title', 'permalink', 'summary', 'content']
+
+[menu]
+  [[menu.main]]
+    name = '分类'
+    url = '/categories/'
+    weight = 10
+  [[menu.main]]
+    name = '标签'
+    url = '/tags/'
+    weight = 20
+  [[menu.main]]
+    name = '归档'
+    url = '/archives/'
+    weight = 30
+  [[menu.main]]
+    name = '搜索'
+    url = '/search/'
+    weight = 40
+  [[menu.main]]
+    name = '关于'
+    url = '/about/'
+    weight = 50
